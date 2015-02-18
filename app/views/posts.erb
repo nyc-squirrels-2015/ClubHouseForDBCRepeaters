@@ -1,0 +1,10 @@
+
+<ul class="posts">
+<% @posts.each do |post| %>
+  <li id="<%=post.id%>"><a href="/posts/<%= post.id %>"> <%= post.title %></a> - <a class="delete <%=post.id%>" href="posts/<%=post.id%>"> Delete </a> - <a class="update_button" href="posts/<%=post.id%>/edit"> Update </a></li>
+  <p> <%= post.user.name %> </p>
+<% end %>
+</ul>
+
+
+<a href="/posts/new">Create a new post</a>
