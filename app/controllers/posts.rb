@@ -1,4 +1,5 @@
-get '/profiles/:id' do
-  @user=User.find(params[:id])
-  erb :profile
+get '/index' do
+  @posts = Post.all
+  erb :posts
 end
+
