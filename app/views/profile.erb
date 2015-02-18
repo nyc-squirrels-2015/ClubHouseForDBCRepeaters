@@ -1,0 +1,11 @@
+<h1>Hello! <%= @user.name %> </h1>
+
+All of <%= @user.name %>'s Posts
+<ul>
+<% @user.posts.each do |post| %>
+  <li><a href="/posts/<%=post.id%>"><%= post.title %></a></li>
+<% end %>
+
+<% @user.comments.each do |comment| %>
+  <li><a href="/posts/<%=comment.post.id%>"><%= comment.text %></a></li>
+<% end %>

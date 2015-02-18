@@ -17,6 +17,10 @@ post '/login' do
   end
 end
 
+get '/donation' do
+  erb :donation
+end
+
 get '/signup' do
   erb :signup
 end
