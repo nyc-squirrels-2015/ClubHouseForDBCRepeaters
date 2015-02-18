@@ -65,3 +65,23 @@ code {
     margin-left: -1em;
     overflow: auto;
 }
+
+
+#wrap {margin-top: 50px;}
+#wrap > h1,h3,p {
+    text-align: center;
+}
+
+#wrap > #welcome_box{
+    text-align: center;
+}
+#login-toolbar{
+    float: right;
+}
+#welcome_box {margin-top:200px;
+}
+#signtop { margin-top:100px;
+}
+#w_h1{ color:pink;
+
+}

@@ -22,12 +22,16 @@
 <body>
 <div id="content">
   <header>
-    <div id="login-toolbar">
+   <div id="login-toolbar">
       <% if current_user %>
         <a href="/logout">Logout</a>
+        <a href="/posts"> Posts </a>
+        <a href="/profiles/<%= current_user.id%>"> Your profile </a>
+        <a href="/comments"> Comments </a>
       <% else %>
-        <a href="/login">Login</a>
+        <a id="login_button" href="/login">Login</a>
       <% end %>
+    </div>
   </header>
   <%= yield %>
 </div>
