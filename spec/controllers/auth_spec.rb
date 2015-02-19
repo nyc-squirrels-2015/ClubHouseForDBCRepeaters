@@ -1,27 +1,34 @@
-require_relative '../spec_helper'
+require_relative "../spec_helper.rb"
 
-describe "Auth" do
-  let(:user) {User.create(name:'James Bond',password:'1234')}
+
+describe "Auth spec" do
+  let(:user){User.create(name:"Dongchul", password:"test")}
 
   before do
     user
   end
 
+  it 'should have an index page' do
+    get '/'
+    expect(last_response.status).to eq(200)
+  end
+
   it 'should have a login' do
     get '/'
-    expect(last_response.body).to include("login")
+    expect(last_response.body).to include "login"
   end
 
   it 'should have a signup' do
     get '/'
-    expect(last_response.body).to include("signup")
+    expect(last_response.body).to include "signing up"
   end
 
-  it 'should respond to signup' do
-    post '/signup', params={ user:{name:'James Bond',password:'1234'}}
+  it 'should redirect after logging in' do
+    post '/login', params = { user: {name:'Dongchul',password:'test'}}
     expect(last_response).to be_redirect
-
     follow_redirect!
-
+    expect(last_response.body).to include("#{user.name}'s Profile")
   end
+
+
 end
