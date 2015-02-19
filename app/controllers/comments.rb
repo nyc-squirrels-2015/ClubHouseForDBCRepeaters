@@ -8,3 +8,4 @@ post '/posts/:id/comment/new' do
   redirect "/posts/#{params[:id]}"
 end
 
+

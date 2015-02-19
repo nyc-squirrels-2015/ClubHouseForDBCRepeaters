@@ -13,7 +13,6 @@ get '/posts/new' do
   erb :new_post
 end
 
-
 get '/posts/:id/edit' do |id|
   @post = Post.find(id)
   erb :update, layout: false
@@ -38,4 +37,11 @@ put '/posts/:id' do
   id = params[:id]
   @post = Post.find(id)
   @post.update(id: id, user_id: current_user.id, title: params[:title], content: params[:content])
+ redirect "/posts"
 end
+
+post '/post/new' do
+  @post = Post.create(title: params[:title], content: params[:content])
+  redirect "/posts"
+end
+
