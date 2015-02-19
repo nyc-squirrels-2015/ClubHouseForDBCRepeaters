@@ -8,6 +8,7 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
+gem 'sinatra-sequel'
 gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 gem 'bcrypt-ruby'
@@ -26,4 +27,5 @@ end
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'
+  gem 'sqlite3'
 end
